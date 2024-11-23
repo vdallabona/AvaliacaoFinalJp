@@ -1,7 +1,6 @@
 const express = require('express')
 const routersClientes = require('./src/routes/clientes')
 const routersFilmes = require('./src/routes/filmes')
-const routersFilmesLocados = require('./src/routes/filmeslocados')
 const Database = require('./src/config/database')
 const cors = require('cors')
 
@@ -9,7 +8,6 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use("/filmes", routersFilmes)
-app.use("/filmeslocados", routersFilmesLocados)
 app.use("/clientes", routersClientes)
 
 Database.db

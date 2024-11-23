@@ -1,4 +1,4 @@
-const ServiceFilmesLocados = require('../services/filmeslocados')
+const ServiceFilmesLocados = require('../services/filmes')
 class controllerFilmesLocados {
 
     async GetFilmesLocados(req, res) {

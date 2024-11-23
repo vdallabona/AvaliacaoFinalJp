@@ -32,6 +32,8 @@ class ModelFilmesLocados {
                 type: database.db.Sequelize.DATEONLY
             }
         })
+        this.model.belongsTo(ModelCliente, { foreignKey: 'clientes_id', as: 'cliente' });
+        this.model.belongsTo(ModelFilmes, { foreignKey: 'filmes_id', as: 'filme' });
     }
 }
 module.exports = new ModelFilmesLocados().model
