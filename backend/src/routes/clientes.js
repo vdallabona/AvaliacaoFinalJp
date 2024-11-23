@@ -9,6 +9,6 @@ router.post('/login', controllerClientes.Login)
 
 router.get('/', auth, controllerClientes.GetClientes)
 router.put('/:id', auth, controllerClientes.UpdateCliente)
-router.delete('/:id', auth, controllerClientes.DeleteCliente)
+router.put('/deletar/:id', auth, controllerClientes.DeleteCliente)
 
 module.exports = router

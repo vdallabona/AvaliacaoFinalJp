@@ -8,7 +8,7 @@ const router = express.Router()
 router.get('/', controllerFilmes.GetFilmes)
 router.post('/', auth, controllerFilmes.CreateFilme)
 router.put('/:id', auth, controllerFilmes.UpdateFilme)
-router.delete('/:id', auth, controllerFilmes.DeleteFilme)
+router.put('/deletar/:id', auth, controllerFilmes.DeleteFilme)
 
 router.post('/locar', auth, controllerFilmesLocados.CreateLocacao)
 router.put('/devolver/:id', auth, controllerFilmesLocados.Decolucao)

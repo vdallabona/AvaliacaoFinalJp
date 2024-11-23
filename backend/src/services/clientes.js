@@ -15,12 +15,18 @@ class ServiceClientes {
         if(!name || !senha || !email){
             throw new Error("Favor preencher todos os dados!")
         }
+        if(name === "deletado"){
+            throw new Error("Nome indisponível")
+        }
         const hashSenha = await bcrypt.hash(senha, SALT)
         return ModelCliente.create({ name, senha: hashSenha, email })
     }
     async UpdateCliente(id, name,  email, senha) {
         if(!id) {
             throw new Error("Favor informar o Id")
+        }
+        if(name === "deletado"){
+            throw new Error("Nome indisponível")
         }
         const cliente = await ModelCliente.findByPk(id)
         if(!cliente) {
@@ -43,11 +49,18 @@ class ServiceClientes {
         if(!cliente) {
             throw new Error("Cliente não encontrada")
         }
-        return cliente.destroy()
+        cliente.name = "deletado"
+        cliente.email = "deletado"
+        cliente.senha = ""
+        cliente.save()
+        return cliente
     }
 
     async Login(email, senha) {
         if(!email || !senha) {
+            throw new Error("Email ou senha inválido!")
+        }
+        if(email === "deletado"){
             throw new Error("Email ou senha inválido!")
         }
 
