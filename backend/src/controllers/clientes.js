@@ -47,6 +47,16 @@ class ControllerCliente {
             res.status(500).send({ msg: error.message })
         }
     }
+
+    async Login(req, res) {
+        try {
+            const { email, senha } = req.body
+            const token = await ServiceCliente.Login(email, senha)
+            res.status(200).send({ token })
+        } catch (error) {
+            res.status(500).send({ msg: error.message })
+        }
+    }
 }
 
 module.exports = new ControllerCliente()
