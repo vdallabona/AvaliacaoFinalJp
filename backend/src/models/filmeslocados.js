@@ -32,8 +32,6 @@ class ModelFilmesLocados {
                 type: database.db.Sequelize.DATEONLY
             }
         })
-        filmes.belongsToMany(clientes, {through: filmeslocados})
-        clientes.belongsToMany(filmes, {through: filmeslocados})
     }
 }
 module.exports = new ModelFilmesLocados().model

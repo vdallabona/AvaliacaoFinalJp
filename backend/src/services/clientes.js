@@ -1,5 +1,4 @@
 const ModelCliente = require('../models/clientes')
-const ModelFilmesLocados = require('../models/filmeslocados')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 

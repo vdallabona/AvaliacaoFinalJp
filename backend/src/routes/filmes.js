@@ -4,8 +4,8 @@ const auth = require("../middleware/auth")
 
 const router = express.Router()
 
-router.post('/', auth, controllerFilmes.CreateFilme)
 router.get('/', controllerFilmes.GetFilmes)
+router.post('/', auth, controllerFilmes.CreateFilme)
 router.put('/:id', auth, controllerFilmes.UpdateFilme)
 router.delete('/:id', auth, controllerFilmes.DeleteFilme)
 
