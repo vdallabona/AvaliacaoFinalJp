@@ -1,0 +1,26 @@
+{
+  "name": "avaliacaofinal",
+  "version": "1.0.0",
+  "description": "avaliacaofinal do jovem programador",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "test": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "init": "^0.1.2",
+    "jest": "^29.7.0",
+    "jsonwebtoken": "9.0.2",
+    "mysql2": "^3.11.3",
+    "node": "^20.18.1",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
